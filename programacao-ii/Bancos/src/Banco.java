@@ -1,24 +1,67 @@
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Banco {
     private String nome;
     private String cnpj;
     private int nroBanco;
-    private List<String> contaBancaria;
+    private List<ContaBancaria> contasBancaria = new ArrayList<>();
 
-    public void InfoBanco(){
-        System.out.printf("Banco %s - AG %s - %s\n", this.nome, this.nroBanco, this.cnpj);
+    Banco() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Nome: ");
+        this.setNome(sc.nextLine());
+        System.out.println("CNPJ: ");
+        this.setCnpj(sc.nextLine());
+        System.out.println("Número Banco: ");
+        this.setNroBanco(functions.getInt());
+
     }
 
-    public void InfoContas() {
+    Banco(String nome, String cnpj, int nroBanco){
+        this.setNome(nome);
+        this.setCnpj(cnpj);
+        this.setNroBanco(nroBanco);
+    }
+
+    public void infoBanco(){
+        System.out.printf("Banco %s - AG %s - %s\n", this.getNome(), this.getNroBanco(), this.getCnpj());
+    }
+
+    public void infoContas() {
         System.out.println("Em manutenção");
     }
 
-    public void CriarConta() {
+    public void criarConta() {
         System.out.println("Em manutenção");
     }
 
-    public void FecharConta() {
+    public void fecharConta() {
         System.out.println("Em manutenção");
+    }
+
+    public void setNome(String nome){
+        this.nome = nome;
+    }
+
+    public String getNome() {
+        return this.nome;
+    }
+
+    public void setCnpj(String cnpj){
+        this.cnpj = cnpj;
+    }
+
+    public String getCnpj() {
+        return this.cnpj;
+    }
+
+    public void setNroBanco(int nroBanco){
+        this.nroBanco = nroBanco;
+    }
+
+    public int getNroBanco() {
+        return this.nroBanco;
     }
 }

@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public abstract class ContaBancaria {
     protected Pessoa titular;
     protected Banco banco;
@@ -6,16 +8,69 @@ public abstract class ContaBancaria {
     protected String senha;
 
     public void saque(){
-        System.out.println("Em manutenção");
+        double valor;
+
+        System.out.println("Informe o valor:");
+        valor = functions.getDouble();
+
+        this.saque(valor);
     }
 
-    public void deposito() {
-        System.out.println("Em manutenção");
+    public void saque(double valor){
+        if (verificaSenha()){
+            if(this.saldo - valor >= 0){
+                this.saldo -= valor;
+                System.out.println("Sacado R$ " + valor);
+            } else {
+                System.out.println("Saldo insuficiente!");
+            }
+        }
+    }
+
+    public void deposito(){
+        double valor;
+
+        System.out.println("Informe o valor:");
+        valor = functions.getDouble();
+
+        this.deposito(valor);
+    }
+
+    public void deposito(double deposito) {
+        this.saldo += deposito;
+
+        System.out.println("Valor depositado");
     }
 
     public boolean verificaSenha() {
-        System.out.println("Em manutenção");
+        Scanner sc = new Scanner(System.in);
+        String senha;
 
-        return false;
+        System.out.println("Informe a senha:");
+        senha = sc.nextLine();
+
+        sc.close();
+
+        return this.verificaSenha(senha);
+    }
+
+    public boolean verificaSenha(String senha) {
+        return senha == this.senha;
+    }
+
+    public void info(){
+
+    }
+
+    public void setNroConta(int nroConta) {
+        this.nroConta = nroConta;
+    }
+
+    public int getNroConta() {
+        return nroConta;
+    }
+
+    public double getSaldo() {
+        return saldo;
     }
 }
