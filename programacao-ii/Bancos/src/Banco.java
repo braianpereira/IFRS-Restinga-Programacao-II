@@ -12,8 +12,10 @@ public class Banco {
         Scanner sc = new Scanner(System.in);
         System.out.println("Nome: ");
         this.setNome(sc.nextLine());
+//        this.setNome(functions.getString("Nome:"));
         System.out.println("CNPJ: ");
         this.setCnpj(sc.nextLine());
+//        this.setCnpj(functions.getString("CNPJ:"));
         System.out.println("Número Banco: ");
         this.setNroBanco(functions.getInt());
 

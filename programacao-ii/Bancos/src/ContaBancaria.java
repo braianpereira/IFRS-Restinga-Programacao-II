@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.util.Scanner;
 
 public abstract class ContaBancaria {
@@ -10,8 +11,9 @@ public abstract class ContaBancaria {
     public void saque(){
         double valor;
 
-        System.out.println("Informe o valor:");
-        valor = functions.getDouble();
+        String aux = functions.getString("Informe o valor a sacar");
+
+        valor = Double.parseDouble(aux);
 
         this.saque(valor);
     }
@@ -30,8 +32,9 @@ public abstract class ContaBancaria {
     public void deposito(){
         double valor;
 
-        System.out.println("Informe o valor:");
-        valor = functions.getDouble();
+        String aux = functions.getString("Informe o valor a depositar");
+
+        valor = Double.parseDouble(aux);
 
         this.deposito(valor);
     }
@@ -48,19 +51,17 @@ public abstract class ContaBancaria {
 
         System.out.println("Informe a senha:");
         senha = sc.nextLine();
-
-        sc.close();
+//        senha = functions.getString("Informe a senha");
+//        sc.close();
 
         return this.verificaSenha(senha);
     }
 
     public boolean verificaSenha(String senha) {
-        return senha == this.senha;
+        return  senha.equals(this.senha);
     }
 
-    public void info(){
-
-    }
+    public void info(){}
 
     public void setNroConta(int nroConta) {
         this.nroConta = nroConta;
@@ -72,5 +73,10 @@ public abstract class ContaBancaria {
 
     public double getSaldo() {
         return saldo;
+    }
+
+    public void setSenha(String senha){ this.senha = senha; }
+
+    public void novoMes() {
     }
 }
