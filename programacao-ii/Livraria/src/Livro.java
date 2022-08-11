@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Livro {
     private String titulo;
     private String editora;
@@ -5,7 +7,23 @@ public class Livro {
     private int ano;
     private float valor;
 
-    public Livro(String titulo, String editora, String area, int ano, float valor) {
+    public Livro() {
+        Scanner sc = new Scanner(System.in);
+        String titulo, editora, area;
+        int ano;
+        float valor;
+
+        System.out.println("Informe o título do livro: ");
+        titulo = sc.nextLine();
+        System.out.println("Informe a Editora do livro: ");
+        editora = sc.nextLine();
+        System.out.println("Informe a Área do livro: ");
+        area = sc.nextLine();
+        System.out.println("Informe o ano do livro: ");
+        ano = sc.nextInt();
+        System.out.println("Informe o valor do livro: ");
+        valor = sc.nextFloat();
+
         this.titulo = titulo;
         this.editora = editora;
         this.area = area;

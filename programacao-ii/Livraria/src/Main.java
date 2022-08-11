@@ -32,14 +32,14 @@ public class Main {
             op = menu();
 
 
-            switch (op){
-                case 0: System.out.println("GoodBye!!!"); break;
-                case 1: livros = insereNovoLivro(livros); break;
-                case 2: listarLivro(livros); break;
-                case 3: livrosPorNome(livros); break;
-                case 4: livrosPorCategoria(livros); break;
-                case 5: livrosPorPreco(livros); break;
-                default: System.out.println("Opção inválida!!!");
+            switch (op) {
+                case 0 -> System.out.println("GoodBye!!!");
+                case 1 -> livros = insereNovoLivro(livros);
+                case 2 -> listarLivro(livros);
+                case 3 -> livrosPorNome(livros);
+                case 4 -> livrosPorCategoria(livros);
+                case 5 -> livrosPorPreco(livros);
+                default -> System.out.println("Opção inválida!!!");
             }
 
         } while (op != 0);
@@ -92,23 +92,7 @@ public class Main {
     }
 
     private static ArrayList insereNovoLivro(ArrayList<Livro> livros) {
-        Scanner sc = new Scanner(System.in);
-        String titulo, editora, area;
-        int ano;
-        float valor;
-
-        System.out.println("Informe o título do livro: ");
-        titulo = sc.nextLine();
-        System.out.println("Informe a Editora do livro: ");
-        editora = sc.nextLine();
-        System.out.println("Informe a Área do livro: ");
-        area = sc.nextLine();
-        System.out.println("Informe o ano do livro: ");
-        ano = sc.nextInt();
-        System.out.println("Informe o valor do livro: ");
-        valor = sc.nextFloat();
-
-        livros.add(new Livro(titulo, editora, area, ano, valor));
+        livros.add(new Livro());
 
         return livros;
 
