@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Vector;
 
 public class Vertice {
@@ -19,7 +17,7 @@ public class Vertice {
     public void info_vizinhos() {
         System.out.println("Vizinhos: ");
         for(Vertice vizinho : this.vizinhanca){
-            System.out.println(vizinho.nomeCidade);
+            System.out.println("Cidade " + vizinho.nomeCidade);
         }
     }
 

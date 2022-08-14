@@ -10,7 +10,7 @@ public class Main {
             System.out.println("3 - Listar cidades");
             System.out.println("4 - Listar conexões");
             System.out.println("5 - Listar cidades vizinhas");
-            System.out.println("7 - Sair");
+            System.out.println("6 - Sair");
 
             opcao = functions.getInt();
             switch (opcao){
@@ -22,7 +22,7 @@ public class Main {
                 case 6 -> System.exit(1);
             }
 
-        }while(opcao != 9);
+        }while(opcao != 6);
     }
 
     private static void listaVizinhos() {
